@@ -1,0 +1,10 @@
+p 35.0 50.0 Cl1_work 0 n
+p 305.0 50.0 Cl2_work 0 n
+t 180.0 155.0 pb_mutex 0 w n
+e pb_mutex Cl1_work 1 n
+e Cl2_work pb_mutex 1 n
+e pb_mutex Cl2_work 1 n
+e Cl1_work pb_mutex 1 n
+h obs
+
+

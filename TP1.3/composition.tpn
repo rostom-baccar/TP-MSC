@@ -1,0 +1,7 @@
+## tpn est le format utilise pour declarer les compositions de Petri.
+## On peut mixer des composants sous forme textuelle (.net) et graphique (.ndr)
+
+source cl1.ndr
+source cl2.ndr
+source gest1.ndr
+source gest2.ndr
