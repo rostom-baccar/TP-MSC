@@ -1,0 +1,23 @@
+p 245.0 355.0 Cl1_G2_req 0 n
+p 95.0 355.0 G2_free 1 n
+t 170.0 275.0 Allocate_G2 0 w n
+p 235.0 195.0 G2_Cl1_ack 0 n
+p 115.0 195.0 G2_allocated 0 n
+t 350.0 355.0 Cl1_req1 0 w n
+t 330.0 195.0 Cl1_req2 0 w n
+t 45.0 90.0 G2_release 0 w n
+p 175.0 50.0 Cl1_G2_release 0 n
+t 315.0 50.0 Cl1_exit 0 w n
+e Allocate_G2 G2_allocated 1 n
+e G2_allocated G2_release 1 n
+e G2_release G2_free 1 n
+e Cl1_G2_release G2_release 1 n
+e Allocate_G2 G2_Cl1_ack 1 n
+e Cl1_G2_req Allocate_G2 1 n
+e G2_free Allocate_G2 1 n
+e Cl1_req1 Cl1_G2_req 1 n
+e G2_Cl1_ack Cl1_req2 1 n
+e Cl1_exit Cl1_G2_release 1 n
+h gest2
+
+

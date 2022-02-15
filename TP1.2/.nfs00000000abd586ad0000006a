@@ -1,0 +1,17 @@
+t 165.0 270.0 Allouement_G1 0 w n
+t 45.0 80.0 G1_Release 0 w n
+p 225.0 185.0 G1_Cl1_ack 0 n
+p 110.0 185.0 G1_Work 0 n
+p 245.0 355.0 Cl1_G1_req 0 n
+p 85.0 355.0 G1_Busy 1 n
+p 180.0 50.0 Cl1_G1_release 0 n
+e Cl1_G1_req Allouement_G1 1 n
+e G1_Busy Allouement_G1 1 n
+e Allouement_G1 G1_Cl1_ack 1 n
+e Cl1_G1_release G1_Release 1 n
+e G1_Release G1_Busy 1 n
+e Allouement_G1 G1_Work 1 n
+e G1_Work G1_Release 1 n
+h gest1
+
+
