@@ -1,0 +1,68 @@
+t 675.0 330.0 1_rel 0 w n
+t 180.0 530.0 2_exit 0 w n
+t 80.0 185.0 3_exit 0 w n
+t 430.0 95.0 4_exit 0 w n
+t 65.0 375.0 3_entry 0 w n
+t 235.0 80.0 4_entry 0 w n
+p 575.0 355.0 token_1 1 n
+p 260.0 590.0 token_2 0 n
+p 120.0 450.0 after_2 0 n
+p 35.0 270.0 token_3 0 n
+p 150.0 115.0 after_3 0 n
+p 340.0 50.0 token_4 0 n
+p 485.0 165.0 after_4 0 n
+t 575.0 405.0 t3 0 w n
+t 575.0 250.0 1_entry 0 w n
+p 575.0 485.0 frozen_1 0 n
+t 925.0 320.0 1_ask 0 w n
+p 785.0 270.0 idle_1 1 n
+p 835.0 385.0 wait_1 0 n
+p 780.0 330.0 cs_1 0 n
+t 675.0 385.0 1_work 0 w n
+t 640.0 485.0 t4 0 w n
+p 705.0 465.0 nbMax 4 n
+t 370.0 565.0 2_entry s 0 w n {} ne
+p 450.0 565.0 after_1 0 n
+a 175.0 410.0 n0 1 {si on passe par t3, on vide nbMax (on fait le ménage)\\navant de donner la main}
+a 735.0 490.0 n1 1 {nbMax: nbr de crédits}
+p 795.0 550.0 not_nbMax 0 n
+t 550.0 555.0 1_exit n 0 w n {} ne
+e not_nbMax 1_exit 4 n
+e 1_exit 0.9262081912 69.3181073 not_nbMax 0.6098226588 81.68843247 4 n
+e t4 not_nbMax 1 n
+e 1_work not_nbMax 1 n
+e not_nbMax 0.08022278854 542.4656671 1_entry 0.1180443032 242.7694379 4 n
+e 1_work t3 1 n
+e frozen_1 t4 ?1 n
+e nbMax t4 1 n
+e t3 frozen_1 1 n
+e token_1 t3 1 n
+e frozen_1 1_exit 1 n
+e 1_entry 0.05902918188 325.1979474 nbMax 0.01761164377 381.1889588 4 n
+e nbMax 1_work 1 n
+e 1_entry token_1 1 n
+e after_4 1_entry 1 n
+e 4_entry token_4 1 n
+e after_3 4_entry 1 n
+e 3_entry token_3 1 n
+e after_2 3_entry 1 n
+e 2_entry token_2 1 n
+e after_1 2_entry 1 n
+e 4_exit after_4 1 n
+e token_4 4_exit 1 n
+e 3_exit after_3 1 n
+e token_3 3_exit 1 n
+e 2_exit after_2 1 n
+e token_2 2_exit 1 n
+e 1_exit after_1 1 n
+e 1_rel idle_1 1 n
+e 1_rel token_1 1 n
+e cs_1 1_rel 1 n
+e 1_work cs_1 1 n
+e wait_1 1_work 1 n
+e token_1 1_work 1 n
+e 1_ask wait_1 1 n
+e idle_1 1_ask 1 n
+h puzzle
+
+

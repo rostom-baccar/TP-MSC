@@ -1,0 +1,105 @@
+t 1015.0 385.0 1_ask 0 w n
+t 910.0 415.0 1_work 0 w n
+t 915.0 380.0 1_rel 0 w n
+t 825.0 435.0 1_exit 0 w n
+t 635.0 675.0 2_ask 0 w n
+t 690.0 580.0 2_work 0 w n
+t 655.0 580.0 2_rel 0 w n
+t 630.0 490.0 2_exit 0 w n
+t 390.0 325.0 3_ask 0 w n
+t 485.0 365.0 3_work 0 w n
+t 490.0 310.0 3_rel 0 w n
+t 575.0 300.0 3_exit 0 w n
+t 745.0 155.0 4_work 0 w n
+t 710.0 150.0 4_rel 0 w n
+t 770.0 240.0 4_exit 0 w n
+t 730.0 505.0 2_entry 0 w n
+t 560.0 400.0 3_entry 0 w n
+t 665.0 230.0 4_entry 0 w n
+t 840.0 335.0 1_entry 0 w n
+p 860.0 385.0 token_1 1 n
+p 970.0 355.0 idle_1 1 n
+p 620.0 625.0 idle_2 1 n
+p 435.0 290.0 idle_3 1 n
+p 690.0 100.0 idle_4 1 n
+p 975.0 415.0 wait_1 0 n
+p 785.0 480.0 after_1 0 n
+p 675.0 640.0 wait_2 0 n
+p 680.0 525.0 token_2 0 n
+p 585.0 450.0 after_2 0 n
+p 425.0 375.0 wait_3 0 n
+p 450.0 335.0 cs_3 0 n
+p 535.0 345.0 token_3 0 n
+p 615.0 255.0 after_3 0 n
+p 745.0 90.0 wait_4 0 n
+p 720.0 205.0 token_4 0 n
+p 810.0 280.0 after_4 0 n
+p 725.0 115.0 cs_4 0 n
+p 955.0 395.0 cs_1 0 n
+p 650.0 630.0 cs_2 0 n
+a 555.0 695.0 n2 1 {la station peut donner la main ssi son client en en idle}
+t 710.0 50.0 4_ask 0 w n
+a 20.0 260.0 n4 1 {Le client étant en attente, sa station priorise son travail au fait de donner la main à une autre station\\nRemarque: arc entre 2 transitions: instaurer des priorités}
+a 920.0 310.0 n1 1 {la station ne peut pas donner la main si son client est en attente\\n(arc inhibiteur: Un arc inhibiteur permet d'interdire la sensibilisation d'une transition si sa place d'entree est marquée )}
+p 830.0 90.0 not_wait_4 1 n
+a 890.0 65.0 n5 1 {Traduction: la station peut donner la main ssi le client n'est pas en attente}
+a 795.0 30.0 n6 1 {Même manip que celle de la station 1\\nDifférence: ajouter le complémentaire de la place wait (not wait) avec des flèches opposées à celles qu'on avait (fleche sortante -> flèche entrante et vice versa\\n+ remplacer l'arc inhibiteur par une double flèche}
+e 4_exit not_wait_4 1 n
+e not_wait_4 4_exit 1 n
+e 4_work not_wait_4 1 n
+e not_wait_4 4_ask 1 n
+e 3_work 3_exit 1 n
+e 2_exit idle_2 1 n
+e idle_2 2_exit 1 n
+e wait_1 1_exit ?-1 n
+e 4_rel after_4 1 n
+e 3_rel after_3 1 n
+e 2_rel after_2 1 n
+e 1_rel after_1 1 n
+e idle_1 1_ask 1 n
+e 1_ask wait_1 1 n
+e token_1 1_work 1 n
+e wait_1 1_work 1 n
+e 1_work cs_1 1 n
+e cs_1 1_rel 1 n
+e 1_rel idle_1 1 n
+e token_1 1_exit 1 n
+e 1_exit after_1 1 n
+e idle_2 2_ask 1 n
+e 2_ask wait_2 1 n
+e token_2 2_work 1 n
+e wait_2 2_work 1 n
+e 2_work cs_2 1 n
+e cs_2 2_rel 1 n
+e 2_rel idle_2 1 n
+e token_2 2_exit 1 n
+e 2_exit after_2 1 n
+e idle_3 3_ask 1 n
+e 3_ask wait_3 1 n
+e token_3 3_work 1 n
+e wait_3 3_work 1 n
+e 3_work cs_3 1 n
+e cs_3 3_rel 1 n
+e 3_rel idle_3 1 n
+e token_3 3_exit 1 n
+e 3_exit after_3 1 n
+e idle_4 4_ask 1 n
+e 4_ask wait_4 1 n
+e token_4 4_work 1 n
+e wait_4 4_work 1 n
+e 4_work cs_4 1 n
+e cs_4 4_rel 1 n
+e 4_rel idle_4 1 n
+e token_4 4_exit 1 n
+e 4_exit after_4 1 n
+e after_1 2_entry 1 n
+e 2_entry token_2 1 n
+e after_2 3_entry 1 n
+e 3_entry token_3 1 n
+e after_3 4_entry 1 n
+e 4_entry token_4 1 n
+e after_4 1_entry 1 n
+e 1_entry token_1 1 n
+h tk4 small
+
+
