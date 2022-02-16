@@ -8,31 +8,31 @@ p 185.0 215.0 table 0 n
 p 280.0 335.0 jardin 0 n
 p 130.0 85.0 banane 0 n
 p 35.0 50.0 bananier 20 n
-p 365.0 95.0 {énergie} 9 n
 p 135.0 365.0 {Réveil} 0 n
 t 60.0 295.0 {déplace} 0 w n
-e {énergie} 0.6227265126 99.00505038 {déplace} 0.03464017145 106.51291 9 n
-e {déplace} champ 1 n
-e {Réveil} {déplace} 1 n
-e dort {Réveil} 1 n
-e dort {énergie} 9 n
-e leve {énergie} 1 n
-e mange {énergie} 2 n
-e {énergie} 0.6020114088 78.60025445 rentre 0.1546803122 76.2758153 5 n
-e {énergie} 0.3952470898 122.613213 cueille 0.1634129193 94.66784037 1 n
-e mange 0.2806692783 83.5463943 bananier 0.04621890463 90.80198236 1 n
-e bananier cueille 1 n
-e mange table 1 n
-e table mange 1 n
-e banane mange 1 n
-e cueille champ 1 n
-e cueille banane 1 n
-e champ cueille 1 n
-e jardin dort 1 n
-e leve jardin 1 n
-e table leve 1 n
-e rentre table 1 n
+p 365.0 95.0 {énergie} 11 n
+e {énergie} leve 1 n
 e champ rentre 1 n
+e rentre table 1 n
+e table leve 1 n
+e leve jardin 1 n
+e jardin dort 1 n
+e champ cueille 1 n
+e cueille banane 1 n
+e cueille champ 1 n
+e banane mange 1 n
+e table mange 1 n
+e mange table 1 n
+e bananier cueille 1 n
+e mange 0.2806692783 83.5463943 bananier 0.04621890463 90.80198236 1 n
+e {énergie} 0.3952470898 122.613213 cueille 0.1634129193 94.66784037 1 n
+e {énergie} 0.6020114088 78.60025445 rentre 0.1546803122 76.2758153 5 n
+e mange {énergie} 2 n
+e dort {énergie} 9 n
+e dort {Réveil} 1 n
+e {Réveil} {déplace} 1 n
+e {déplace} champ 1 n
+e {énergie} 0.6227265126 99.00505038 {déplace} 0.03464017145 106.51291 9 n
 h planteur
 
 
